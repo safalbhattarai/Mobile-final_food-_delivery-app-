@@ -516,7 +516,7 @@ class LoginscreenView extends StatelessWidget {
                       " Signup",
                       style: TextStyle(
                         color: Color(0xFF0ACF83),
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.bolds,
                       ),
                     ),
                   ),
