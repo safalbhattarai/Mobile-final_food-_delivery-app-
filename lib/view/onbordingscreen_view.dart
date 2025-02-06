@@ -424,53 +424,53 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
             ),
           ),
-//           Padding(
-//             padding: const EdgeInsets.all(20.0),
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 TextButton(
-//                   onPressed: _onDone,
-//                   child: const Text(
-//                     'Skip',
-//                     style: TextStyle(color: Colors.orange, fontSize: 16),
-//                   ),
-//                 ),
-//                 Row(
-//                   children: List.generate(
-//                     _onboardingData.length,
-//                     (index) => Container(
-//                       margin: const EdgeInsets.symmetric(horizontal: 4),
-//                       width: 8,
-//                       height: 8,
-//                       decoration: BoxDecoration(
-//                         shape: BoxShape.circle,
-//                         color: _currentPage == index
-//                             ? Colors.orange
-//                             : Colors.grey.shade400,
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 TextButton(
-//                   onPressed: _currentPage == _onboardingData.length - 1
-//                       ? _onDone
-//                       : () => _pageController.nextPage(
-//                             duration: const Duration(milliseconds: 300),
-//                             curve: Curves.easeInOut,
-//                           ),
-//                   child: Text(
-//                     _currentPage == _onboardingData.length - 1
-//                         ? 'Done'
-//                         : 'Next',
-//                     style: const TextStyle(color: Colors.orange, fontSize: 16),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: _onDone,
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(color: Colors.orange, fontSize: 16),
+                  ),
+                ),
+                Row(
+                  children: List.generate(
+                    _onboardingData.length,
+                    (index) => Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      width: 8,
+                      height: 8,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: _currentPage == index
+                            ? Colors.orange
+                            : Colors.grey.shade400,
+                      ),
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: _currentPage == _onboardingData.length - 1
+                      ? _onDone
+                      : () => _pageController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          ),
+                  child: Text(
+                    _currentPage == _onboardingData.length - 1
+                        ? 'Done'
+                        : 'Next',
+                    style: const TextStyle(color: Colors.orange, fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
