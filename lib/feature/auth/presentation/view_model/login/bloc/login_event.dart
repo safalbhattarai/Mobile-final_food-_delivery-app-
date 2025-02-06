@@ -35,6 +35,6 @@ class LoginCustomerEvent extends LoginEvent {
   const LoginCustomerEvent({
     required this.context,
     required this.username,
-    required this.password,
+    required this.passworddd,
   });
 }
