@@ -1,4 +1,5 @@
-//
+
+
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:safall_final_mobile_app/feature/auth/presentation/view_model/registration/bloc/registration_bloc.dart';
@@ -12,11 +13,11 @@
 //
 // class _RegistrationScreenViewState extends State<RegistrationscreenView> {
 //   final _formKey = GlobalKey<FormState>();
-//   final _fnameController = TextEditingController(text: "Safal");
-//   final _lnameController = TextEditingController(text: "bhattarai");
-//   final _phoneController = TextEditingController(text: "9843011291");
-//   final _usernameController = TextEditingController(text: "Safal");
-//   final _passwordController = TextEditingController(text: "123456");
+//   final _fnameController = TextEditingController();
+//   final _lnameController = TextEditingController();
+//   final _phoneController = TextEditingController();
+//   final _usernameController = TextEditingController();
+//   final _passwordController = TextEditingController();
 //
 //   final _gap = const SizedBox(height: 15);
 //
@@ -24,7 +25,7 @@
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: const Text('Registration pages '),
+//         title: const Text('Registration Page'),
 //         centerTitle: true,
 //       ),
 //       body: BlocListener<RegistrationBloc, RegistrationState>(
@@ -40,78 +41,101 @@
 //           }
 //         },
 //         child: SafeArea(
-//           child: SingleChildScrollView(
-//             padding: const EdgeInsets.all(20),
-//             child: Form(
-//               key: _formKey,
-//               child: Column(
-//                 children: [
-//                   const CircleAvatar(
-//                     radius: 50,
-//                     backgroundImage: AssetImage('assets/images/background.png'),
+//           child: Column(
+//             children: [
+//               // Enlarged CircleAvatar
+//               Expanded(
+//                 flex: 2,
+//                 child: Center(
+//                   child: CircleAvatar(
+//                     radius: 100, // Increase radius
+//                     backgroundImage: const AssetImage(
+//                         'assets/images/background.png'), // Adjust image path
 //                   ),
-//                   const SizedBox(height: 25),
-//                   TextFormField(
-//                     controller: _fnameController,
-//                     decoration: const InputDecoration(labelText: 'First Name'),
-//                     validator: (value) =>
-//                         value!.isEmpty ? 'Please enter first name' : null,
-//                   ),
-//                   _gap,
-//                   TextFormField(
-//                     controller: _lnameController,
-//                     decoration: const InputDecoration(labelText: 'Last Name'),
-//                     validator: (value) =>
-//                         value!.isEmpty ? 'Please enter last name' : null,
-//                   ),
-//                   _gap,
-//                   TextFormField(
-//                     controller: _phoneController,
-//                     decoration:
-//                         const InputDecoration(labelText: 'Phone Number'),
-//                     keyboardType: TextInputType.phone,
-//                     validator: (value) =>
-//                         value!.isEmpty ? 'Please enter phone number' : null,
-//                   ),
-//                   _gap,
-//                   TextFormField(
-//                     controller: _usernameController,
-//                     decoration: const InputDecoration(labelText: 'Username'),
-//                     validator: (value) =>
-//                         value!.isEmpty ? 'Please enter username' : null,
-//                   ),
-//                   _gap,
-//                   TextFormField(
-//                     controller: _passwordController,
-//                     obscureText: true,
-//                     decoration: const InputDecoration(labelText: 'Password'),
-//                     validator: (value) =>
-//                         value!.isEmpty ? 'Please enter password' : null,
-//                   ),
-//                   _gap,
-//                   SizedBox(
-//                     width: double.infinity,
-//                     child: ElevatedButton(
-//                       onPressed: () {
-//                         if (_formKey.currentState!.validate()) {
-//                           context.read<RegistrationBloc>().add(
-//                                 RegisterCustomer(
-//                                   fName: _fnameController.text,
-//                                   lName: _lnameController.text,
-//                                   phoneNo: _phoneController.text,
-//                                   username: _usernameController.text,
-//                                   password: _passwordController.text,
-//                                   context: context,
-//                                 ),
-//                               );
-//                         }
-//                       },
-//                       child: const Text('Register'),
+//                 ),
+//               ),
+//               Expanded(
+//                 flex: 5,
+//                 child: SingleChildScrollView(
+//                   padding: const EdgeInsets.all(20),
+//                   child: Form(
+//                     key: _formKey,
+//                     child: Column(
+//                       crossAxisAlignment: CrossAxisAlignment.stretch,
+//                       children: [
+//                         TextFormField(
+//                           controller: _fnameController,
+//                           decoration:
+//                           const InputDecoration(labelText: 'First Name'),
+//                           validator: (value) => value!.trim().isEmpty
+//                               ? 'Please enter first name'
+//                               : null,
+//                         ),
+//                         _gap,
+//                         TextFormField(
+//                           controller: _lnameController,
+//                           decoration:
+//                           const InputDecoration(labelText: 'Last Name'),
+//                           validator: (value) => value!.trim().isEmpty
+//                               ? 'Please enter last name'
+//                               : null,
+//                         ),
+//                         _gap,
+//                         TextFormField(
+//                           controller: _phoneController,
+//                           decoration:
+//                           const InputDecoration(labelText: 'Phone Number'),
+//                           keyboardType: TextInputType.phone,
+//                           validator: (value) => value!.trim().isEmpty
+//                               ? 'Please enter phone number'
+//                               : null,
+//                         ),
+//                         _gap,
+//                         TextFormField(
+//                           controller: _usernameController,
+//                           decoration:
+//                           const InputDecoration(labelText: 'Username'),
+//                           validator: (value) => value!.trim().isEmpty
+//                               ? 'Please enter username'
+//                               : null,
+//                         ),
+//                         _gap,
+//                         TextFormField(
+//                           controller: _passwordController,
+//                           obscureText: true,
+//                           decoration:
+//                           const InputDecoration(labelText: 'Password'),
+//                           validator: (value) => value!.trim().isEmpty
+//                               ? 'Please enter password'
+//                               : null,
+//                         ),
+//                         _gap,
+//                         SizedBox(
+//                           width: double.infinity,
+//                           child: ElevatedButton(
+//                             onPressed: () {
+//                               if (_formKey.currentState!.validate()) {
+//                                 context.read<RegistrationBloc>().add(
+//                                   RegisterCustomer(
+//                                     fName: _fnameController.text.trim(),
+//                                     lName: _lnameController.text.trim(),
+//                                     phoneNo: _phoneController.text.trim(),
+//                                     username: _usernameController.text.trim(),
+//                                     password: _passwordController.text.trim(),
+//                                     context: context,
+//                                   ),
+//                                 );
+//                               }
+//                             },
+//                             child: const Text('Register'),
+//                           ),
+//                         ),
+//                       ],
 //                     ),
 //                   ),
-//                 ],
+//                 ),
 //               ),
-//             ),
+//             ],
 //           ),
 //         ),
 //       ),
@@ -119,34 +143,6 @@
 //   }
 // }
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-
-
-
-
 
 
 
@@ -161,6 +157,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart'; // Import the image_picker package
+import 'dart:io';
 import 'package:safall_final_mobile_app/feature/auth/presentation/view_model/registration/bloc/registration_bloc.dart';
 
 class RegistrationscreenView extends StatefulWidget {
@@ -177,8 +175,16 @@ class _RegistrationScreenViewState extends State<RegistrationscreenView> {
   final _phoneController = TextEditingController();
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  File? _image;
+  final ImagePicker _picker = ImagePicker();
   final _gap = const SizedBox(height: 15);
+
+  Future<void> _pickImage(ImageSource source) async {
+    final XFile? pickedFile = await _picker.pickImage(source: source);
+    if (pickedFile != null) {
+      setState(() => _image = File(pickedFile.path));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -202,14 +208,44 @@ class _RegistrationScreenViewState extends State<RegistrationscreenView> {
         child: SafeArea(
           child: Column(
             children: [
-              // Enlarged CircleAvatar
               Expanded(
                 flex: 2,
                 child: Center(
-                  child: CircleAvatar(
-                    radius: 100, // Increase radius
-                    backgroundImage: const AssetImage(
-                        'assets/images/background.png'), // Adjust image path
+                  child: GestureDetector(
+                    onTap: () async {
+                      await showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Wrap(
+                            children: [
+                              ListTile(
+                                leading: const Icon(Icons.camera_alt),
+                                title: const Text('Take a Photo'),
+                                onTap: () {
+                                  _pickImage(ImageSource.camera);
+                                  Navigator.pop(context);
+                                },
+                              ),
+                              ListTile(
+                                leading: const Icon(Icons.photo_library),
+                                title: const Text('Choose from Gallery'),
+                                onTap: () {
+                                  _pickImage(ImageSource.gallery);
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                    child: CircleAvatar(
+                      radius: 100,
+                      backgroundImage: _image != null
+                          ? FileImage(_image!)
+                          : const AssetImage('assets/images/background.png')
+                      as ImageProvider,
+                    ),
                   ),
                 ),
               ),
@@ -226,18 +262,16 @@ class _RegistrationScreenViewState extends State<RegistrationscreenView> {
                           controller: _fnameController,
                           decoration:
                           const InputDecoration(labelText: 'First Name'),
-                          validator: (value) => value!.trim().isEmpty
-                              ? 'Please enter first name'
-                              : null,
+                          validator: (value) =>
+                          value!.trim().isEmpty ? 'Please enter first name' : null,
                         ),
                         _gap,
                         TextFormField(
                           controller: _lnameController,
                           decoration:
                           const InputDecoration(labelText: 'Last Name'),
-                          validator: (value) => value!.trim().isEmpty
-                              ? 'Please enter last name'
-                              : null,
+                          validator: (value) =>
+                          value!.trim().isEmpty ? 'Please enter last name' : null,
                         ),
                         _gap,
                         TextFormField(
@@ -245,18 +279,16 @@ class _RegistrationScreenViewState extends State<RegistrationscreenView> {
                           decoration:
                           const InputDecoration(labelText: 'Phone Number'),
                           keyboardType: TextInputType.phone,
-                          validator: (value) => value!.trim().isEmpty
-                              ? 'Please enter phone number'
-                              : null,
+                          validator: (value) =>
+                          value!.trim().isEmpty ? 'Please enter phone number' : null,
                         ),
                         _gap,
                         TextFormField(
                           controller: _usernameController,
                           decoration:
                           const InputDecoration(labelText: 'Username'),
-                          validator: (value) => value!.trim().isEmpty
-                              ? 'Please enter username'
-                              : null,
+                          validator: (value) =>
+                          value!.trim().isEmpty ? 'Please enter username' : null,
                         ),
                         _gap,
                         TextFormField(
@@ -264,9 +296,8 @@ class _RegistrationScreenViewState extends State<RegistrationscreenView> {
                           obscureText: true,
                           decoration:
                           const InputDecoration(labelText: 'Password'),
-                          validator: (value) => value!.trim().isEmpty
-                              ? 'Please enter password'
-                              : null,
+                          validator: (value) =>
+                          value!.trim().isEmpty ? 'Please enter password' : null,
                         ),
                         _gap,
                         SizedBox(
@@ -301,4 +332,19 @@ class _RegistrationScreenViewState extends State<RegistrationscreenView> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
