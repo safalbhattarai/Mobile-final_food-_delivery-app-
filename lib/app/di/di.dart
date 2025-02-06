@@ -279,63 +279,63 @@ _initSplashScreenDependencies() async {
 
 
 
-import 'package:get_it/get_it.dart';
-import 'package:safall_final_mobile_app/core/network/hive_service.dart';
-import 'package:safall_final_mobile_app/feature/Product/data/data_source/product_local_data_source.dart';
-import 'package:safall_final_mobile_app/feature/Product/data/repository/product_local_repository.dart';
-import 'package:safall_final_mobile_app/feature/Product/domain/use_case/create_product_usecase.dart';
-import 'package:safall_final_mobile_app/feature/Product/domain/use_case/delete_product_usecase.dart';
-import 'package:safall_final_mobile_app/feature/Product/domain/use_case/get_all_product_usecase.dart';
-import 'package:safall_final_mobile_app/feature/Product/presentation/view_model/bloc/product_bloc.dart';
-import 'package:safall_final_mobile_app/feature/auth/data/data_source/local_datasource/auth_local_datasource.dart';
-import 'package:safall_final_mobile_app/feature/auth/data/repository/auth_local_repository.dart';
-import 'package:safall_final_mobile_app/feature/auth/domain/use_case/login_use_usecase.dart';
-import 'package:safall_final_mobile_app/feature/auth/domain/use_case/register_use_usecase.dart';
-import 'package:safall_final_mobile_app/feature/auth/presentation/view_model/login/bloc/login_bloc.dart';
-import 'package:safall_final_mobile_app/feature/auth/presentation/view_model/registration/bloc/registration_bloc.dart';
-import 'package:safall_final_mobile_app/feature/home/presentation/view_model/home_cubit.dart';
-import 'package:safall_final_mobile_app/feature/order/data/data_source/order_local_data_source.dart';
-import 'package:safall_final_mobile_app/feature/order/data/repository/course_local_repository.dart';
-import 'package:safall_final_mobile_app/feature/order/domain/use_case/create_order_usecase.dart';
-import 'package:safall_final_mobile_app/feature/order/domain/use_case/delete_order_usecase.dart';
-import 'package:safall_final_mobile_app/feature/order/domain/use_case/get_all_order_usecase.dart';
-import 'package:safall_final_mobile_app/feature/order/presentation/view_model/bloc/order_bloc.dart';
-import 'package:safall_final_mobile_app/feature/splash/presentation/view_model/splash_cubit.dart';
-final getIt = GetIt.instance;
+// import 'package:get_it/get_it.dart';
+// import 'package:safall_final_mobile_app/core/network/hive_service.dart';
+// import 'package:safall_final_mobile_app/feature/Product/data/data_source/product_local_data_source.dart';
+// import 'package:safall_final_mobile_app/feature/Product/data/repository/product_local_repository.dart';
+// import 'package:safall_final_mobile_app/feature/Product/domain/use_case/create_product_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/Product/domain/use_case/delete_product_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/Product/domain/use_case/get_all_product_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/Product/presentation/view_model/bloc/product_bloc.dart';
+// import 'package:safall_final_mobile_app/feature/auth/data/data_source/local_datasource/auth_local_datasource.dart';
+// import 'package:safall_final_mobile_app/feature/auth/data/repository/auth_local_repository.dart';
+// import 'package:safall_final_mobile_app/feature/auth/domain/use_case/login_use_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/auth/domain/use_case/register_use_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/auth/presentation/view_model/login/bloc/login_bloc.dart';
+// import 'package:safall_final_mobile_app/feature/auth/presentation/view_model/registration/bloc/registration_bloc.dart';
+// import 'package:safall_final_mobile_app/feature/home/presentation/view_model/home_cubit.dart';
+// import 'package:safall_final_mobile_app/feature/order/data/data_source/order_local_data_source.dart';
+// import 'package:safall_final_mobile_app/feature/order/data/repository/course_local_repository.dart';
+// import 'package:safall_final_mobile_app/feature/order/domain/use_case/create_order_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/order/domain/use_case/delete_order_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/order/domain/use_case/get_all_order_usecase.dart';
+// import 'package:safall_final_mobile_app/feature/order/presentation/view_model/bloc/order_bloc.dart';
+// import 'package:safall_final_mobile_app/feature/splash/presentation/view_model/splash_cubit.dart';
+// final getIt = GetIt.instance;
 
-Future<void> initDependencies() async {
-  // First initialize hive service
-  await _initHiveService();
+// Future<void> initDependencies() async {
+//   // First initialize hive service
+//   await _initHiveService();
 
-  await _initProductDependencies();
-  await _initOrderDependencies();
-  await _initRegisterDependencies();
-  await _initHomeDependencies();
-  await _initLoginDependencies();
+//   await _initProductDependencies();
+//   await _initOrderDependencies();
+//   await _initRegisterDependencies();
+//   await _initHomeDependencies();
+//   await _initLoginDependencies();
 
-  await _initSplashScreenDependencies();
-}
+//   await _initSplashScreenDependencies();
+// }
 
-_initHiveService() {
-  getIt.registerLazySingleton<HiveService>(() => HiveService());
-}
+// _initHiveService() {
+//   getIt.registerLazySingleton<HiveService>(() => HiveService());
+// }
 
-_initRegisterDependencies() {
-  // init local data source
-  getIt.registerLazySingleton(
-    () => AuthLocalDataSource(getIt<HiveService>()),
-  );
+// _initRegisterDependencies() {
+//   // init local data source
+//   getIt.registerLazySingleton(
+//     () => AuthLocalDataSource(getIt<HiveService>()),
+//   );
 
-  // init local repository
-  getIt.registerLazySingleton(
-    () => AuthLocalRepository(getIt<AuthLocalDataSource>()),
-  );
+//   // init local repository
+//   getIt.registerLazySingleton(
+//     () => AuthLocalRepository(getIt<AuthLocalDataSource>()),
+//   );
 
-  // register use usecase
-  getIt.registerLazySingleton<RegisterUseCase>(
-    () => RegisterUseCase(
-      getIt<AuthLocalRepository>(),
-    ),
+//   // register use usecase
+//   getIt.registerLazySingleton<RegisterUseCase>(
+//     () => RegisterUseCase(
+//       getIt<AuthLocalRepository>(),
+//     ),
   );
 
   getIt.registerFactory<RegistrationBloc>(
