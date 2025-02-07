@@ -24,3 +24,14 @@ class RegisterCustomer extends RegistrationEvent {
     required this.password,
   });
 }
+
+
+
+
+
+
+
+
+
+
+
