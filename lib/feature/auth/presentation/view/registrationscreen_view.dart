@@ -40,17 +40,17 @@ class _RegisterViewState extends State<RegistrationscreenView> {
         setState(() {
           _img = File(image.path);
           // sending image to server
-          context.read<RegistrationBloc>().add(
+          context.read<RegistrationBloc>().add(ll
                 LoadImage(file: _img!),
               );
         });
-      } else {
+      } else { 
         return;
       }
     } catch (e) {
       debugPrint(e.toString());
     }
-  }
+  }lll
 
   @override
   Widget build(BuildContext context) {
@@ -224,3 +224,91 @@ class _RegisterViewState extends State<RegistrationscreenView> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       );
+        });
+      } else { 
+        return;
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }lll
+
+  @override
+  Widget build(BuildContext context) {
+    // Get the screen width to adjust the layout for tablets
+    double screenWidth = MediaQuery.of(context).size.width;
+    double padding =

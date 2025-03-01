@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:stockvision_app/app/di/di.dart';
-import 'package:stockvision_app/core/theme/app_theme.dart';
-import 'package:stockvision_app/feature/splash/presentation/view/splashscreen_view.dart';
-import 'package:stockvision_app/feature/splash/presentation/view_model/splash_cubit.dart';
+
+import '../core/theme/app_theme.dart';
+import '../feature/splash/presentation/view/splashscreen_view.dart';
+import '../feature/splash/presentation/view_model/splash_cubit.dart';
+import 'di/di.dart';
+import 'widgets/custom_elevated_button.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class BlocProvider {
 }
 
 // class MyApp extends StatefulWidget {
