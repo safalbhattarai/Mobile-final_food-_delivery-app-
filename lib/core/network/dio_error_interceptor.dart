@@ -17,7 +17,7 @@ class DioErrorInterceptor extends Interceptor {
         );
       } else {
         err = DioException(
-          requestOptions: err.requestOptions,
+          requestOptions: err.requestOptions,llllll
           response: err.response,
           error: 'Something went wrong',
           type: err.type,
