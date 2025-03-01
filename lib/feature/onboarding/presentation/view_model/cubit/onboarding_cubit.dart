@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stockvision_app/app/di/di.dart';
+import 'package:stockvision_app/feature/auth/presentation/view/loginscreen_view.dart';
+import 'package:stockvision_app/feature/auth/presentation/view_model/login/bloc/login_bloc.dart';
+import 'package:stockvision_app/feature/home/presentation/view_model/home_state.dart';
 
 class OnboardingCubit extends Cubit<HomeState> {
   OnboardingCubit() : super(HomeState.initial());

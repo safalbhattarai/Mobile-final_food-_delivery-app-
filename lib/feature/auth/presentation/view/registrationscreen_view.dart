@@ -3,14 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';llllll
-
+import 'package:permission_handler/permission_handler.dart';
+import 'package:stockvision_app/feature/auth/presentation/view_model/registration/bloc/registration_bloc.dart';
 
 class RegistrationscreenView extends StatefulWidget {
   const RegistrationscreenView({super.key});
 
   @override
-  State<RegistrationscreenView> createState() => _RegisterViewState();llll
+  State<RegistrationscreenView> createState() => _RegisterViewState();
 }
 
 class _RegisterViewState extends State<RegistrationscreenView> {
@@ -40,17 +40,17 @@ class _RegisterViewState extends State<RegistrationscreenView> {
         setState(() {
           _img = File(image.path);
           // sending image to server
-          context.read<RegistrationBloc>().add(ll
+          context.read<RegistrationBloc>().add(
                 LoadImage(file: _img!),
               );
         });
-      } else { 
+      } else {
         return;
       }
     } catch (e) {
       debugPrint(e.toString());
     }
-  }lll
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -224,91 +224,3 @@ class _RegisterViewState extends State<RegistrationscreenView> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       );
-        });
-      } else { 
-        return;
-      }
-    } catch (e) {
-      debugPrint(e.toString());
-    }
-  }lll
-
-  @override
-  Widget build(BuildContext context) {
-    // Get the screen width to adjust the layout for tablets
-    double screenWidth = MediaQuery.of(context).size.width;
-    double padding =

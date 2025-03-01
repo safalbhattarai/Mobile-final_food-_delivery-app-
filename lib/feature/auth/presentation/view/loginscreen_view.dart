@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stockvision_app/app/di/di.dart';
+import 'package:stockvision_app/feature/auth/presentation/view/registrationscreen_view.dart';
+import 'package:stockvision_app/feature/auth/presentation/view_model/login/bloc/login_bloc.dart';
+import 'package:stockvision_app/feature/auth/presentation/view_model/registration/bloc/registration_bloc.dart';
 
 class LoginscreenView extends StatefulWidget {
   final List<String>? registeredUsers; // Optional list of registered users

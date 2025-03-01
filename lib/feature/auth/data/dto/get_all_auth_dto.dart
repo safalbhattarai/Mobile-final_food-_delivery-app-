@@ -1,5 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-import 'package:stockvision_app/feature/auth/data/model/auth_api_model.dart';
+
+import '../model/auth_api_model.dart';
 
 part 'get_all_auth_dto.g.dart';
 
@@ -19,4 +19,8 @@ class GetAllAuthDTO {
 
   factory GetAllAuthDTO.fromJson(Map<String, dynamic> json) =>
       _$GetAllAuthDTOFromJson(json);
+}
+
+class JsonSerializable {
+  const JsonSerializable();
 }

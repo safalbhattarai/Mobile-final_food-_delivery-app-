@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:stockvision_app/app/constants/api_endpoints.dart';
-import 'package:stockvision_app/core/network/dio_error_interceptor.dart';
+
+
+import '../../app/constants/api_endpoints.dart';
+import 'dio_error_interceptor.dart';
 
 class ApiService {
   final Dio _dio;
@@ -19,4 +21,7 @@ class ApiService {
         'Content-Type': 'application/json',
       };
   }
+}
+
+class PrettyDioLogger {
 }

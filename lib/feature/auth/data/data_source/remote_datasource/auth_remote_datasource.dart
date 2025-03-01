@@ -1,9 +1,8 @@
 import 'dart:io';
 
-import 'package:dio/dio.dart';
-import 'package:stockvision_app/app/shared_prefs/token_shared_prefs.dart';
-import 'package:stockvision_app/feature/auth/data/data_source/auth_data_source.dart';
-import 'package:stockvision_app/feature/auth/domain/entity/auth_entity.dart';
+import '../../../../../app/shared_prefs/token_shared_prefs.dart';
+import '../../../domain/entity/auth_entity.dart';
+import '../auth_data_source.dart';
 
 class AuthRemoteDatasource implements IAuthDataSource {
   final Dio _dio;
@@ -219,4 +218,7 @@ class AuthRemoteDatasource implements IAuthDataSource {
       throw Exception('Error updating user: $e');
     }
   }
+}
+
+class Dio {
 }

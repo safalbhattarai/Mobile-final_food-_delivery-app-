@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:stockvision_app/feature/auth/domain/entity/auth_entity.dart';
 
 part 'auth_api_model.g.dart';
 
@@ -66,4 +65,7 @@ class AuthApiModel extends Equatable {
   // TODO: implement props
   List<Object?> get props =>
       [fName, lName, image, phoneNo, email, username, password, address];
+}
+
+class Equatable {
 }

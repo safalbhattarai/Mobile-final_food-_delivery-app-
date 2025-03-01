@@ -1,8 +1,6 @@
-import 'package:equatable/equatable.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:stockvision_app/app/constants/hive_table_constant.dart';
-import 'package:stockvision_app/feature/auth/domain/entity/auth_entity.dart';
-import 'package:uuid/uuid.dart';
+
+import '../../domain/entity/auth_entity.dart';
+import 'auth_api_model.dart';
 
 part 'auth_hive_model.g.dart';
 
@@ -37,7 +35,7 @@ class AuthHiveModel extends Equatable {
     required this.address,
     required this.username,
     required this.password,
-  }) : customerId = customerId ?? const Uuid().v4();
+  }) : customerId = customerId ?? const Uri().v4();
 
   // Initial Constructor
   const AuthHiveModel.initial()

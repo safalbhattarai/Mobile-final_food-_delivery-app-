@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:stockvision_app/app/shared_prefs/token_shared_prefs.dart';
-import 'package:stockvision_app/core/error/failure.dart';
-import 'package:stockvision_app/feature/auth/data/data_source/remote_datasource/auth_remote_datasource.dart';
-import 'package:stockvision_app/feature/auth/domain/entity/auth_entity.dart';
-import 'package:stockvision_app/feature/auth/domain/repository/auth_repository.dart';
+import 'package:safalmobileapp/app/shared_prefs/token_shared_prefs.dart';
+import 'package:safalmobileapp/core/error/failure.dart';
+import 'package:safalmobileapp_app/feature/auth/data/data_source/remote_datasource/auth_remote_datasource.dart';
+import 'package:safalmobileapp_app/feature/auth/domain/entity/auth_entity.dart';
+import 'package:safalmobile app_app/feature/auth/domain/repository/auth_repository.dart';
 
 class AuthRemoteRepository implements IAuthRepository {
   final AuthRemoteDatasource _authRemoteDatasource;
