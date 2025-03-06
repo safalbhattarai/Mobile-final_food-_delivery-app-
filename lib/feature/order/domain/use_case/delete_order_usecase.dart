@@ -1,11 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:safall_final_mobile_app/app/usecase/usease.dart';
+import 'package:stockvision_app/app/usecase/usease.dart';
+import 'package:stockvision_app/core/error/failure.dart';
+import 'package:stockvision_app/feature/Order/domain/repository/order_repository.dart';
 
-import 'package:safall_final_mobile_app/core/error/failure.dart';
-import 'package:safall_final_mobile_app/feature/order/domain/repository/order_repository.dart';
-
-// DeleteOrderParams class
 class DeleteOrderParams extends Equatable {
   final String id;
 
@@ -17,7 +15,7 @@ class DeleteOrderParams extends Equatable {
   List<Object?> get props => [id];
 }
 
-// Use case for deleting an order
+// Use case
 class DeleteOrderUsecase implements UsecaseWithParams<void, DeleteOrderParams> {
   final IOrderRepository _orderRepository;
 

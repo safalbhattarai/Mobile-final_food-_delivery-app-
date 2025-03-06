@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:safall_final_mobile_app/core/network/hive_service.dart';
-import 'package:safall_final_mobile_app/feature/auth/data/data_source/auth_data_source.dart';
-import 'package:safall_final_mobile_app/feature/auth/data/model/auth_hive_model.dart';
-import 'package:safall_final_mobile_app/feature/auth/domain/entity/auth_entity.dart';
+import 'package:stockvision_app/core/network/hive_service.dart';
+import 'package:stockvision_app/feature/auth/data/data_source/auth_data_source.dart';
+import 'package:stockvision_app/feature/auth/data/model/auth_hive_model.dart';
+import 'package:stockvision_app/feature/auth/domain/entity/auth_entity.dart';
 
 class AuthLocalDataSource implements IAuthDataSource {
   final HiveService _hiveService;
@@ -11,14 +11,16 @@ class AuthLocalDataSource implements IAuthDataSource {
   AuthLocalDataSource(this._hiveService);
 
   @override
-  Future<AuthEntity> getCurrentUser() async {
+  Future<AuthEntity> getCurrentUser(String? token, String userId) async {
     // Return Empty AuthEntity
     return Future.value(const AuthEntity(
       userId: "1",
       fName: "",
       lName: "",
       image: null,
+      email: "",
       phoneNo: "",
+      address: "",
       username: "",
       password: "",
     ));
@@ -49,6 +51,17 @@ class AuthLocalDataSource implements IAuthDataSource {
 
   @override
   Future<String> uploadProfilePicture(File file) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<String> getUserById(String username) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<AuthEntity> updateUser(AuthEntity userId) {
+    // TODO: implement updateUser
     throw UnimplementedError();
   }
 }

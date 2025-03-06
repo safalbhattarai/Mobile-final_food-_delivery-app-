@@ -1,13 +1,17 @@
 import 'dart:io';
 
-import 'package:safall_final_mobile_app/feature/auth/domain/entity/auth_entity.dart';
+import 'package:stockvision_app/feature/auth/domain/entity/auth_entity.dart';
 
 abstract interface class IAuthDataSource {
   Future<String> loginCustomer(String username, String password);
 
-  Future<void> registerCustomer(AuthEntity student);
+  Future<void> registerCustomer(AuthEntity customer);
 
-  Future<AuthEntity> getCurrentUser();
+  Future<AuthEntity> getCurrentUser(String? token, String userId);
 
   Future<String> uploadProfilePicture(File file);
+
+  Future<String> getUserById(String username);
+  
+  Future<AuthEntity> updateUser(AuthEntity userId );
 }

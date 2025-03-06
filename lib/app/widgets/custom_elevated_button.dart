@@ -18,3 +18,9 @@ class CustomElevatedButton extends StatelessWidget {
     );
   }
 }
+
+class ElevatedButton {
+}
+
+class StatelessWidget {
+}
